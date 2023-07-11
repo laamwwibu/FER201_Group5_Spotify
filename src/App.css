@@ -1,0 +1,202 @@
+/* Custom color for page */
+:root {
+    --pageBackground: #000000;
+    --tabBackground: #121212;
+    --cardBackground: #212121;
+    --activeText: #fff;
+    --inActiveText: #b3b3b3;
+    --mainColor: #1db954;
+}
+
+/* Install font */
+@font-face {
+    font-family: "Montserrat";
+    src: url(./font/static/Montserrat-Bold.ttf);
+}
+
+/* apply font and background color */
+.App {
+    font-family: "Montserrat";
+    background-color: var(--pageBackground);
+    overflow-x: hidden;
+}
+
+/* no padding and margin */
+.nopadding {
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+/* Removes scrollbar */
+* {
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* ==================== Navbar CSS ==================== */
+
+.navbar-container, .header-container, .page-content-container {
+    background-color: var(--tabBackground);
+    border-radius: 10px;
+}
+
+/* style active tab */
+.navbar {
+    background-color: var(--tabBackground);
+    border-radius: 10px;
+    padding: 0px !important;
+}
+
+.navbar .main-section {
+    background-color: var(--tabBackground);
+    border-radius: 10px;
+    flex-grow: 1;
+}
+
+.main-section .item {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 15px 15px;
+}
+
+.navbar .item.active {
+    background-color: var(--mainColor);
+    border-radius: 5px;
+}
+
+/* ==================== Header CSS ==================== */
+.header-nav-button {
+    background-color: var(--cardBackground);
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.header-nav-button svg {
+    color: var(--activeText);
+    font-size: 20px;
+}
+
+.header-nav-button {
+    border-radius: 50px;
+}
+
+.header-user-image img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    object-fit: cover;
+}
+
+/* ==================== Albums CSS ==================== */
+.genre-title a {
+    text-decoration: none;
+}
+
+.genre-title a:hover {
+    text-decoration: underline;
+}
+
+.genre-name {
+    font-size: 2em;
+    color: var(--activeText);
+}
+
+.genre-show-all {
+    color: var(--inActiveText);
+}
+
+.genre-albums a {
+    text-decoration: none;
+}
+
+.genre-album-card {
+    border: none !important;
+    border-radius: 5px !important;
+    background-color: var(--cardBackground) !important;
+    padding: 20px;
+    padding-bottom: 10px;
+}
+
+.genre-album-card img {
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+}
+
+.genre-album-card .card-body h5 {
+    color: var(--activeText);
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.genre-album-card .card-body p a {
+    color: var(--inActiveText);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* Limit the text to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 48px;
+    text-overflow: ellipsis;
+}
+
+.artist-card img {
+    border-radius: 50%;
+}
+
+/* ==================== Albums Details CSS ==================== */
+.album-info img {
+    width: 250px;
+    height: 250px;
+}
+
+.album-info-body h1 {
+    font-size: 5rem;
+    color: var(--activeText);
+}
+
+.album-info-body-detail>* {
+    margin: 5px;
+    color: var(--activeText);
+    text-decoration: none;
+}
+
+.album-info-body-detail img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.album-info-body-detail a:hover {
+    text-decoration: underline;
+}
+
+.song-table thead {
+    border-bottom: 1px solid var(--inActiveText);
+}
+
+.song-table th,
+td {
+    background-color: var(--tabBackground) !important;
+    border: none !important;
+}
+
+.song-table th {
+    color: var(--inActiveText) !important;
+}
+
+.song-table td {
+    color: var(--activeText) !important;
+}

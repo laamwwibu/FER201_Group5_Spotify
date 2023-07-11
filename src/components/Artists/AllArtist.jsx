@@ -1,0 +1,42 @@
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Card, CardBody, CardImg, CardTitle } from 'reactstrap';
+
+const HomeArtist = () => {
+    const [artists, setArtist] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:9999/artists')
+            .then(response => response.json())
+            .then(data => setArtist(data))
+    }, [])
+
+    return (
+        <div className='home-genre'>
+            <div className='row'>
+                <div className='genre-title d-flex justify-content-between align-items-center my-2'>
+                    <Link className='genre-name'>Top Artist</Link>
+                </div>
+                <div className='container'>
+                    <div className='row'>
+                        {artists.map(artist => (
+                            <div key={artist.id} className='col-lg-2 genre-albums'>
+                                <Link to={`/artist/${artist.id}`}>
+                                    <Card className="genre-album-card artist-card my-2">
+                                        <CardImg className='circle' src={artist.img} alt={artist.name} />
+                                        <CardBody>
+                                            <CardTitle tag="h5">
+                                                {artist.name}
+                                            </CardTitle>
+                                        </CardBody>
+                                    </Card>
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+export default HomeArtist;
