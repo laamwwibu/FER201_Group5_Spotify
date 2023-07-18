@@ -23,11 +23,11 @@ const HomeArtist = () => {
                         {artists
                             .slice(0, 6)
                             .map(artist => (
-                                <div key={artist.id} className='col-lg-2 genre-albums'>
+                                <div key={artist.id} className='col-lg-2 col-md-4 col-sm-6 genre-albums'>
                                     <Link to={`/artist/${artist.id}`}>
                                         <Card className="genre-album-card artist-card my-2">
-                                            <CardImg className='circle' src={artist.img} alt={artist.name} />
-                                            <CardBody>
+                                            <CardImg className='circle img-fluid' src={artist.img} alt={artist.name} />
+                                            <CardBody className='nopadding'>
                                                 <CardTitle tag="h5">
                                                     {artist.name}
                                                 </CardTitle>

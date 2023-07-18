@@ -17,7 +17,7 @@
 /* apply font and background color */
 .App {
     font-family: "Montserrat";
-    background-color: var(--pageBackground);
+    /* background-color: var(--pageBackground); */
     overflow-x: hidden;
 }
 
@@ -38,7 +38,9 @@
 
 /* ==================== Navbar CSS ==================== */
 
-.navbar-container, .header-container, .page-content-container {
+.navbar-container,
+.header-container,
+.page-content-container {
     background-color: var(--tabBackground);
     border-radius: 10px;
 }
@@ -78,6 +80,7 @@
     justify-content: center;
     align-items: center;
     margin-right: 10px;
+    border-radius: 50px;
 }
 
 .header-nav-button svg {
@@ -85,8 +88,8 @@
     font-size: 20px;
 }
 
-.header-nav-button {
-    border-radius: 50px;
+.header-nav-button,.header-user-button:hover {
+    cursor: pointer;
 }
 
 .header-user-image img {
@@ -94,6 +97,10 @@
     height: 40px;
     border-radius: 50px;
     object-fit: cover;
+}
+
+.dropdown-menu {
+    background-color: var(--cardBackground);
 }
 
 /* ==================== Albums CSS ==================== */
@@ -199,4 +206,28 @@ td {
 
 .song-table td {
     color: var(--activeText) !important;
+}
+
+/* ==================== Artist Details CSS ==================== */
+.artist-profile-image img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.artist-profile-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.artist-about .container>p {
+    background-color: var(--cardBackground);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: justify;
 }

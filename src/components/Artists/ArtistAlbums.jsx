@@ -14,21 +14,17 @@ const ArtistAlbums = ({ artistId }) => {
       .then(response => response.json())
       .then(data => setArtist(data))
   }, [artistId]);
-
+  
   return (
     <div>
-      <div className='genre-title d-flex justify-content-between align-items-center my-2'>
-        <Link to={`/artist/${artistId}`} className='genre-name'>More By {artists.name}</Link>
-        <Link to={`/artist/${artistId}`} className='genre-show-all'>Show all</Link>
-      </div>
       <div className='container-fluid nopadding'>
         <div className='row'>
           {albums.map(album => (
-            <div key={album.id} className='col-lg-2 genre-albums'>
+            <div key={album.id} className='col-lg-2 col-md-4 col-sm-6 genre-albums'>
               <Link to={`/album/${album.id}`}>
                 <Card className="genre-album-card my-2">
-                  <CardImg src={album.albumCover} alt={album.name} />
-                  <CardBody>
+                  <CardImg className='img-fluid' src={album.albumCover} alt={album.name} />
+                  <CardBody className='nopadding'>
                     <CardTitle tag="h5">
                       {album.name}
                     </CardTitle>

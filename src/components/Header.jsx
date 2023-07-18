@@ -32,7 +32,7 @@ const Header = () => {
                             <DropdownToggle className='header-user-image' tag='div'>
                                 <img src="https://pbs.twimg.com/profile_images/1371462160283406339/n9Z3koOU_400x400.jpg" alt="userStockImg" />
                             </DropdownToggle>
-                            <DropdownMenu end>
+                            <DropdownMenu dark end>
                                 <DropdownItem>
                                     <NavLink>User Profile</NavLink>
                                 </DropdownItem>

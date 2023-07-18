@@ -39,11 +39,11 @@ const HomeGenre = () => {
                                 .filter(album => album.genreId === genre.id)
                                 .slice(0, 6)
                                 .map(album => (
-                                    <div key={album.id} className='col-lg-2 genre-albums'>
+                                    <div key={album.id} className='col-lg-2 col-md-4 col-sm-6 genre-albums'>
                                         <Link to={`/album/${album.id}`}>
                                             <Card className="genre-album-card my-2">
-                                                <CardImg src={album.albumCover} alt={album.name} />
-                                                <CardBody>
+                                                <CardImg className='img-fluid' src={album.albumCover} alt={album.name} />
+                                                <CardBody className='nopadding'>
                                                     <CardTitle tag="h5">
                                                         {album.name}
                                                     </CardTitle>

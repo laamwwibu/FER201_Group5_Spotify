@@ -33,92 +33,104 @@
         {
             "id": 1,
             "name": "Travis Scott",
-            "img": "https://i.scdn.co/image/ab6761610000e5ebe707b87e3f65997f6c09bfff"
+            "img": "https://i.scdn.co/image/ab6761610000e5ebe707b87e3f65997f6c09bfff",
+            "desc": "A Houston-born hip-hop artist and producer affiliated with Kanye West's GOOD Music and T.I.'s Grand Hustle, Travis Scott became known during the early 2010s for his heavily Auto-Tuned half-sung\/half-rapped vocal style. Within seven years of his mainstream arrival via West's Cruel Summer compilation (2012), on which he served as co-producer and featured artist, Scott attained numerous platinum singles as a lead artist, including a streak of four that began with \"Antidote,\" a track off his number three hit debut album, Rodeo (2015). He followed with a pair of number one full-lengths, Birds in the Trap Sing McKnight (2016) and Astroworld (2018), all the while assisting in platinum singles headlined by the likes of Rihanna (\"Bitch Better Have My Money\"), SZA (\"Love Galore\"), and Drake (\"Portland\"), and working extensively with Quavo as Huncho Jack. Whether leading or supporting, Scott's presence was unmistakable, almost always colored with an array of ad-lib trills including but not limited to \"It's lit,\" \"Yeah, yeah,\" and \"Straight up.\" Along with a collaborative 2019 album with his label collective Jackboys, Scott released the back-to-back 2021 singles \"Escape\" and \"Mafia.\""
         },
         {
             "id": 2,
             "name": "Don Toliver",
-            "img": "https://i.scdn.co/image/ab67616100005174eb63bf6379a9ea8453a30020"
+            "img": "https://i.scdn.co/image/ab67616100005174eb63bf6379a9ea8453a30020",
+            "desc": "Singer\/rapper Don Toliver established himself with a unique blend of vocal-driven trap. The Houstonian was catapulted to international recognition in 2018 with a featured role on \"Can't Say,\" a Top 40 U.S. pop hit off Travis Scott's Astroworld LP. Signed to Scott's Cactus Jack label, Toliver joined Scott and Sheck Wes on the 2019 collaborative project JackBoys, a number one hit, and crashed the Top Ten as a solo artist with 2020's Heaven or Hell. Toliver has had continued Top Ten success with his second and third albums, Life of a DON (2021) and the opulent, star-studded Love Sick (2023)."
         },
         {
             "id": 3,
             "name": "21 Savage",
-            "img": "https://i.scdn.co/image/ab6761610000e5eb35ca7d2181258b51c0f2cf9e"
+            "img": "https://i.scdn.co/image/ab6761610000e5eb35ca7d2181258b51c0f2cf9e",
+            "desc": "Unflinching yet offhanded rapper 21 Savage left street life behind to establish a career that has rapidly progressed with a string of hit singles as a headliner and featured artist, the RIAA-certified gold full-lengths Savage Mode (2016), Issa Album (2017), and I Am > I Was (2018), and a clutch of Grammy Awards. Savage Mode II, his 2020 collaborative LP with Metro Boomin, topped the Billboard 200 and was a hit around the globe. He followed it in 2022 with Her Loss, another full-length collaboration, this time with Drake."
         },
         {
             "id": 4,
             "name": "A$AP Rocky",
-            "img": "https://i.scdn.co/image/ab6761610000e5ebee452efcf24aa4124fb28d94"
+            "img": "https://i.scdn.co/image/ab6761610000e5ebee452efcf24aa4124fb28d94",
+            "desc": "Championed by fellow rapper Drake and The Fader magazine before he released his first full-length project, self-proclaimed hood outcast A$AP Rocky became one of the biggest breakout stars of the 2010s. When the decade was over, the rapper had a pair of number one albums with Long.Live.A$AP (2013) and At.Long.Last.A$AP (2015), and a Top Ten entry with third LP Testing (2018). These full-lengths were promoted with some of the most popular songs of the era, most notably the Grammy-nominated Top Ten pop hit \"Fuckin' Problems,\" plus seven additional singles that went either platinum or multi-platinum. Supported by A$AP Mob and eager collaborators ranging from Kendrick Lamar and 2 Chainz to Skepta and Skrillex, Rocky himself has assisted with hits headlined by Selena Gomez (\"Good for You\"), G-Eazy (\"No Limit\"), and Famous Dex (\"Pick It Up\")."
         },
         {
             "id": 5,
             "name": "Metro Boomin",
-            "img": "https://i.scdn.co/image/ab6761610000e5ebdf9a1555f53a20087b8c5a5c"
+            "img": "https://i.scdn.co/image/ab6761610000e5ebdf9a1555f53a20087b8c5a5c",
+            "desc": "St. Louis-raised, Atlanta-based producer Metro Boomin perfected a street-oriented sound that is jet-black and low-gloss, sufficiently reflected in his alias. Within five years of his first output with Future, he amassed well over a dozen Top 20 R&B\/hip-hop hits and a similar quantity of gold and platinum RIAA certifications. Since his early half-decade roll of success working with the likes of Future, iLoveMakonnen, Drake, Migos, and Post Malone -- with \"Honest,\" \"Tuesday,\" \"Jumpman,\" \"Bad and Boujee,\" and \"Congratulations\" among the biggest hits -- Metro has remained a marquee name. He crowned the Billboard 200 with Not All Heroes Wear Capes (2018), his first solo album, and made return trips to the top spot with Savage Mode II (a 2020 duo LP with 21 Savage) and his sophomore set Heroes & Villains (2022). He branched out to film in 2023, helming the soundtrack to Spider-Man: Across the Spider-Verse."
         },
         {
             "id": 6,
             "name": "Lil Baby",
-            "img": "https://i.scdn.co/image/ab6761610000e5eb6cad3eff5adc29e20f189a6c"
+            "img": "https://i.scdn.co/image/ab6761610000e5eb6cad3eff5adc29e20f189a6c",
+            "desc": "Atlanta-bred rapper Lil Baby is charismatic, confident, and overwhelmingly popular on a worldwide level, consistently topping the charts with his rough-yet-accessible commercially geared sound. Following a series of mixtapes, his popularity exploded in 2018, the year he released his first proper album, Harder Than Ever (which included the Drake-featuring hit \"Yes Indeed\"), and Drip Harder (a collaborative mixtape with Gunna), both of which entered the Top Ten of the Billboard 200. He hit number one in 2020 with his second studio album, My Turn, and again the next year with The Voice of the Heroes, a collaborative studio effort with Lil Durk. Lil Baby made a habit of dominating the charts, debuting in the top spot once more in 2022 with his third studio album, It's Only Me."
         },
         {
             "id": 7,
             "name": "Hoàng Thùy Linh",
-            "img": "https://i.scdn.co/image/ab6761610000e5ebbe8b6591753659ca595c73c6"
+            "img": "https://i.scdn.co/image/ab6761610000e5ebbe8b6591753659ca595c73c6",
+            "desc": ""
         },
         {
             "id": 8,
             "name": "blackbear",
-            "img": "https://i.scdn.co/image/ab6761610000e5eb4f7d049994ac00ed885bfbf2"
+            "img": "https://i.scdn.co/image/ab6761610000e5eb4f7d049994ac00ed885bfbf2",
+            "desc": "Los Angeles-based singer, songwriter, and producer Blackbear is known for his cross-pollinated brand of pop, emo, R&B, and hip-hop. He initially garnered attention behind the scenes in the 2010s, penning songs for Justin Bieber, G-Eazy, Machine Gun Kelly, and others. He built upon that buzz, establishing himself as a singer in his own right with full-lengths like 2017's number 14 Billboard 200-charting Digital Druglord, 2019's Top 20 Billboard R&B\/Hip-Hop album Anonymous, and 2020's number 15 Billboard 200-charting Everything Means Nothing. Along with releasing several EPs, including 2021's Misery Lake, Blackbear has continued to collaborate, issuing tracks with Mod Sun, Mike Posner, Kane Brown, and others. In 2022, he reunited with Kelly for \"GFY,\" off his sixth full-length, the emo-punk-infused In Loving Memory."
         },
         {
             "id": 9,
             "name": "eden",
-            "img": "https://i.scdn.co/image/ab6761610000e5ebd0c7498dd4ba7f540be56450"
+            "img": "https://i.scdn.co/image/ab6761610000e5ebd0c7498dd4ba7f540be56450",
+            "desc": "What started as the dance-oriented Eden Project morphed into something different for Irish singer\/songwriter Jonathon Ng, who shifted into more song-based indie electronic territory under the name EDEN during the latter half of the 2010s. With his 2018 album Vertigo, he earned acclaim and a notable amount of chart success on both sides of the Atlantic. Likewise, his next LP, 2020's No Future, hit number 26 on the Billboard 200. EDEN returned in 2022 with ICYMI, a pensive album wrought with themes of loss and ephemerality."
         },
         {
             "id": 10,
             "name": "MAX",
-            "img": "https://i.scdn.co/image/ab6761610000e5eb354a84cfb27458618bca3ecb"
+            "img": "https://i.scdn.co/image/ab6761610000e5eb354a84cfb27458618bca3ecb",
+            "desc": "MAX is a pop\/soul singer, actor, and dancer who found mainstream success with the release of his 2016 sophomore effort, Hell's Kitchen Angel, which included the multi-platinum-selling hit \"Lights Down Low.\" 2020's star-studded Colour Vision featured guest spots from Quinn XCII, Chromeo, Hayley Kiyoko, and SUGA (BTS), and in 2021 he teamed up with Ali Gatie on the streaming hit \"Butterflies.\" \"Gucci Bag,\" the lead single from his upcoming third studio album, appeared in 2022."
         },
         {
             "id": 11,
             "name": "Jon Bellion",
-            "img": "https://i.scdn.co/image/ab6761610000e5ebe0c2c39a5bc940f905aa02f3"
+            "img": "https://i.scdn.co/image/ab6761610000e5ebe0c2c39a5bc940f905aa02f3",
+            "desc": "Singer\/songwriter Jon Bellion is an ebullient performer known for his cross-pollinated brand of contemporary pop that touches upon R&B, hip-hop, and indie rock influences. Bellion broke through with his 2016 debut, The Human Condition, which featured the hit single \"All Time Low,\" and landed at number five on the Billboard 200. He again cracked the Top 20 with his 2018 follow-up, Glory Sound Prep. An in-demand collaborator, Bellion has also garnered attention for his work with others, co-penning Eminem and Rihanna's 2015 Grammy-winning song \"The Monster\" and singing on Zedd's 2015 single \"Beautiful Now.\" Along with his own singles like 2019's \"Crop Circles\" and 2021's \"I Feel It\" (with Burna Boy), he has also collaborated on projects with Cee Lo Green, Christina Aguilera, Maroon 5, Halsey, and others."
         },
         {
             "id": 12,
             "name": "Bryce Vine",
-            "img": "https://i.scdn.co/image/ab6761610000e5eba40b06f59b0afc23001e53c7"
+            "img": "https://i.scdn.co/image/ab6761610000e5eba40b06f59b0afc23001e53c7",
+            "desc": "Bryce Vine is a rapper and singer who blends pop, rap, and alternative rock influences, delivering witty, thoughtful lyrics and catchy hooks. His rhyming style is at once relaxed and quick-witted, full of dry wit and casual observations on relationships (his 2018 breakthrough hit \"Drew Barrymore\") and the world around him (2014's \"Sour Patch Kids,\" his first online success), while the tracks mix up hip-hop conventions with idiosyncratic melodies and with the guitar often part of the arrangements. After enjoying major success as an independent artist, he signed with a major label for the release of his debut full-length Carnival in 2019. He continued to release a steady stream of singles where he explored different sounds and feelings, with the boastful rap of \"Nobody,\" the cocky breakup tune \"y can't we b friends,\" and the darkly witty socio-political pop of \"American Dream\" all arriving within six months in 2022."
         },
         {
             "id": 13,
             "name": "RL Grime",
-            "img": "https://i.scdn.co/image/ab6761610000517419a62c7027111679b497a7e6"
+            "img": "https://i.scdn.co/image/ab6761610000517419a62c7027111679b497a7e6",
+            "desc": "When Los Angeles-based DJ\/producer Henry Steinway combines hip-hop, electro, drum'n'bass, and any number of other bass-heavy genres, he dons the moniker RL Grime. A founding member of the WeDidIt Collective along with producers like Shlohmo and D33J, he has collaborated with Baauer, Skrillex, Big Sean, and others. He made his full-length debut with 2014's well-received Void, an eclectic mix of genres such as garage, EDM, and R&B. The Billboard 200-charting 2018 follow-up NOVA featured big names such as Chief Keef, Miguel, and Joji. Steinway founded his own Sable Valley label in 2019 and released a series of compilations showcasing up-and-coming talent. He additionally released collaborations with artists like Whethan and NERO."
         },
         {
             "id": 14,
             "name": "San Holo",
-            "img": "https://i.scdn.co/image/ab67616100005174283643e4a44fc33f670dbad9"
+            "img": "https://i.scdn.co/image/ab67616100005174283643e4a44fc33f670dbad9",
+            "desc": "Dutch electronic musician San Holo is a genre-bending EDM producer and songwriter whose work touches upon future bass, ambient, trap, and pop styles. He initially garnered attention in the 2010s, posting remixes of tracks by Dr. Dre, Outkast, and other hip-hop performers. After founding his own Bitbird label, he broke through with his 2017 debut, Album1, cracking the Top Ten of Billboard's electronic chart and taking home two International Dance Music Awards. In 2021, he released his second full-length, BB U OK?"
         },
         {
             "id": 15,
             "name": "Illenium",
-            "img": "https://i.scdn.co/image/ab6761610000e5eb81a0ab3a9a4326929a01b0f1"
+            "img": "https://i.scdn.co/image/ab6761610000e5eb81a0ab3a9a4326929a01b0f1",
+            "desc": "Illenium is the recording alias of Nicholas Miller, a Bay Area electronic producer and DJ who brings unabashed sentimentality and melodicism to festival-ready dubstep and trap. After debuting with several singles in 2014, he began releasing guest-heavy full-lengths starting with 2016's Ashes and continuing with his first appearance on the Billboard 200, 2017's Awake, home to the gold-certified \"Feel Good\" with Gryffin and Daya. In 2019, Illenium's third set, Ascend, hit number one on the U.S. Dance chart, boosted by his biggest hit to date, the chart-topping, platinum-certified Chainsmokers collaboration \"Takeaway\" with Lennon Stella. He scored his second consecutive number one in 2021 with fourth LP Fallen Embers. His self-titled fifth album appeared in 2023."
         },
         {
             "id": 16,
             "name": "Cafe Music BGM",
-            "img": "https://i.scdn.co/image/ab6761610000e5ebc9d9f79c6a9a14c98ef467f4"
+            "img": "https://i.scdn.co/image/ab6761610000e5ebc9d9f79c6a9a14c98ef467f4",
+            "desc": "From the moment you start playing the music of Cafe Music BGM channel, you will be in your favorite cafe.\r\nWhen you want to take a break in your daily life, or when you want to play with your images, you will be able to spend a rich time with a cup of coffee in your hand with our music.\r\n\r\nFormed in 2013, our band consists of four members: pianist, guitarist, bassist, and drummer. Saxophonists, trumpeters, and vocalists sometimes join us in case we want to add to our sound. We mostly perform original songs each member composed, wishing to make people feel pleasant at any time, anywhere and any scene in everyday life by our music. We never stop creating; we compose, perform, and record music every day! We hope our music will reach as many audiences as possible."
         },
         {
             "id": 17,
             "name": "Track Tribe",
-            "img": "https://i.scdn.co/image/ab6761610000e5ebc0ec04d22638f8a90ec31472"
-        },
-        {
-            "id": 18,
-            "name": "Andree Right Hand",
-            "img": "https://i.scdn.co/image/ab6761610000e5eb3dea3ddb7a950a6df930f5dc"
+            "img": "https://i.scdn.co/image/ab6761610000e5ebc0ec04d22638f8a90ec31472",
+            "desc": "A group of life long friends, and lovers of music and technology. Our music has been used by content creators in millions of videos, streamed billions of times. We’ve already contributed massively to the largest pre-cleared audio libraries on earth. We write, perform and produce high quality original music in any context, for any use case. We want to work with you."
         }
     ],
     "genres": [

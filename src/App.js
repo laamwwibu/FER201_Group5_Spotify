@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <div className="App">
-          <div className="container-fluid p-3">
+          <div className="container-fluid p-3" style={{ height: '100vh', overflowY: 'hidden' }}>
             <div className="row">
               {/* Navbar */}
               <div className="col-lg-3 col-md-3 page-navbar px-0">
@@ -25,9 +25,9 @@ function App() {
               <div className="col-lg-9 col-md-9 page-content pe-0">
                 <div className="container-fluid page-content-container">
                   <Header></Header>
-                  <div className="content-wrapper">
+                  <div className="content-wrapper" style={{ height: 'calc(100vh - 64px)', overflowY: 'auto' }}>
                     <Routes>
-                      <Route path="/" element={<Home />} />
+                      <Route path='/' element={<Home />} />
                       <Route path="/album/:albumId" element={<AlbumDetail />} />
                       <Route path="/genres/:genreName" element={<AllAlbumByGenre />} />
                       <Route path="/artists/" element={<AllArtist />} />
