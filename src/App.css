@@ -188,7 +188,7 @@
 }
 
 .song-table th,
-td {
+.song-table td {
     background-color: var(--tabBackground) !important;
     border: none !important;
 }
