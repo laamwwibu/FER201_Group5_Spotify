@@ -17,7 +17,7 @@
 /* apply font and background color */
 .App {
     font-family: "Montserrat";
-    /* background-color: var(--pageBackground); */
+    background-color: var(--pageBackground);
     overflow-x: hidden;
 }
 

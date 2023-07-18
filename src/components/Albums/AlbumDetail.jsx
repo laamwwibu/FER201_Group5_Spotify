@@ -69,62 +69,20 @@ const AlbumDetail = () => {
     }
 
     return (
-        <div className="App">
-            <div className="container-fluid p-3">
-                <div className="row">
-                    {/* Navbar */}
-                    <div className="col-lg-3 col-md-3 page-navbar px-0">
-                        <div className="container-fluid navbar-container px-0">
-                            <Navbar></Navbar>
-                        </div>
-                    </div>
-                    {/* Page Content */}
-                    <div className="col-lg-9 col-md-9 page-content pe-0">
-                        <div className="container-fluid page-content-container">
-                            <Header></Header>
-                            <div className="content-wrapper">
-                                <div className='container-fluid'>
-                                    <div className='album-info d-flex align-items-end'>
-                                        {album.albumCover && <img src={album.albumCover} alt={album.name} />}
-                                        <div className='album-info-body mx-3'>
-                                            <h1>{album.name}</h1>
-                                            <div className='album-info-body-detail d-flex align-items-center'>
-                                                {artist.img && <img id='album-info-body-detail-image' src={artist.img} alt='' />}
-                                                <Link to={`/artist/${album.artistId}`} className='nopadding'>{artist.name}</Link>
-                                                <p>&#x2022;</p>
-                                                <p className='nopadding'>{album.year}</p>
-                                                <p>&#x2022;</p>
-                                                <p className='nopadding'>
-                                                    {songs.length} songs, {albumDuration}
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className='album-songs my-3'>
-                                        <table className='table song-table'>
-                                            <thead>
-                                                <tr>
-                                                    <th scope='col'>#</th>
-                                                    <th scope='col'>Title</th>
-                                                    <th scope='col'><FontAwesomeIcon icon={faClock} /></th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {songs.map((song, index) => (
-                                                    <tr key={song.id}>
-                                                        <th scope='row'>{index + 1}</th>
-                                                        <td>{song.name}</td>
-                                                        <td>{song.duration}</td>
-                                                    </tr>
-                                                ))}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <ArtistAlbums artistId={artist.id}></ArtistAlbums>
-                                </div>
-                            </div>
-                        </div>
+        <div className='container-fluid'>
+            <div className='album-info d-flex align-items-end'>
+                {album.albumCover && <img src={album.albumCover} alt={album.name} />}
+                <div className='album-info-body mx-3'>
+                    <h1>{album.name}</h1>
+                    <div className='album-info-body-detail d-flex align-items-center'>
+                        {artist.img && <img id='album-info-body-detail-image' src={artist.img} alt='' />}
+                        <Link to={`/artist/${album.artistId}`} className='nopadding'>{artist.name}</Link>
+                        <p>&#x2022;</p>
+                        <p className='nopadding'>{album.year}</p>
+                        <p>&#x2022;</p>
+                        <p className='nopadding'>
+                            {songs.length} songs, {albumDuration}
+                        </p>
                     </div>
                 </div>
             </div>

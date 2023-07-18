@@ -15,6 +15,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import TableSong from '../Tables/TableSong';
 import TableAlbum from '../Tables/TableAlbum';
 import TableUser from '../Tables/TableUser';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -90,10 +91,9 @@ export default function HomeAdmin() {
                 <Grid xs={6} md={2}>
                     <Item>xs=4</Item>
                 </Grid>
-                <Grid xs={6} md={10}>                    
-                    {/* <TableSong/>
-                    <TableAlbum/> */}
-                    <TableUser/>
+                <Grid xs={6} md={10}>
+                    
+                    <TableUser />
                     {/* <Item>xs=4</Item> */}
                 </Grid>
 

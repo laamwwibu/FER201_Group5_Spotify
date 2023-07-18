@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Card, CardBody, CardImg, CardTitle, CardText } from 'reactstrap';
 import ArtistAlbums from './ArtistAlbums';
+import '../../App.css';
 
 const ArtistDetail = () => {
     const { artistId } = useParams();
