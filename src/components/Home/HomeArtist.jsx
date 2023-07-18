@@ -5,17 +5,28 @@ import { Card, CardBody, CardImg, CardTitle } from 'reactstrap';
 const HomeArtist = () => {
     const [artists, setArtist] = useState([]);
 
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
     useEffect(() => {
         fetch('http://localhost:9999/artists')
             .then(response => response.json())
-            .then(data => setArtist(data))
+            .then(data => {
+                const shuffledAlbums = shuffleArray(data);
+                setArtist(shuffledAlbums)
+            })
     }, [])
 
     return (
         <div className='home-genre'>
             <div className='row'>
                 <div className='genre-title d-flex justify-content-between align-items-center my-2'>
-                    <Link to={`/artists/`} className='genre-name'>Top Artist</Link>
+                    <Link to={`/artists/`} className='genre-name'>Artist</Link>
                     <Link to={`/artists/`} className='genre-show-all'>Show all</Link>
                 </div>
                 <div className='container'>

@@ -7,6 +7,7 @@ import AlbumDetail from './components/Albums/AlbumDetail';
 import AllAlbumByGenre from './components/Albums/AllAlbumByGenre';
 import AllArtist from './components/Artists/AllArtist';
 import ArtistDetail from './components/Artists/ArtistDetail';
+import Search from './components/Search/Search';
 
 function App() {
   return (
@@ -32,7 +33,7 @@ function App() {
                       <Route path="/genres/:genreName" element={<AllAlbumByGenre />} />
                       <Route path="/artists/" element={<AllArtist />} />
                       <Route path="/artist/:artistId" element={<ArtistDetail />} />
-                      {/* <Route path="/post" element={<Search />}></Route> */}
+                      <Route path="/search" element={<Search />}></Route>
                     </Routes>
                   </div>
                 </div>
