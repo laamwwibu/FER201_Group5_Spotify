@@ -3,7 +3,6 @@ import { Link, useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock } from "@fortawesome/free-solid-svg-icons";
 import ArtistAlbums from '../Artists/ArtistAlbums';
-import MoreByArtist from '../MoreByArtist';
 
 const AlbumDetail = () => {
     const { albumId } = useParams();
@@ -107,7 +106,10 @@ const AlbumDetail = () => {
                     </tbody>
                 </table>
             </div>
-            <MoreByArtist artistId={artist.id}></MoreByArtist>
+            <div className='genre-title d-flex justify-content-between align-items-center my-2'>
+                <Link to={`/artist/${artist.id}`} className='genre-name'>More By {artist.name}</Link>
+                <Link to={`/artist/${artist.id}`} className='genre-show-all'>Show all</Link>
+            </div>
             <ArtistAlbums artistId={artist.id}></ArtistAlbums>
         </div>
     );
