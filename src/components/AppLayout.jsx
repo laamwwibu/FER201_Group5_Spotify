@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom';
 const AppLayout = () => {
 
     return (
-        <div className="container-fluid p-3" style={{ height: '100vh', overflowY: 'hidden' }}>
+        <div className="container-fluid p-3" style={{ height: '100vh', overflowY: 'hidden', backgroundColor: 'black'}}>
             <div className="row">
                 {/* Navbar */}
                 <div className="col-lg-3 col-md-3 page-navbar px-0">

@@ -6,6 +6,10 @@ import AllAlbumByGenre from './components/Albums/AllAlbumByGenre';
 import AllArtist from './components/Artists/AllArtist';
 import ArtistDetail from './components/Artists/ArtistDetail';
 import Home from './components/Home/Home';
+import HomeAdmin from './components/Home/HomeAdmin';
+import TableAlbum from './components/Tables/TableAlbum';
+import TableSong from './components/Tables/TableSong';
+import TableUser from './components/Tables/TableUser';
 
 function App() {
   return (
@@ -21,8 +25,12 @@ function App() {
             <Route path="/artist/:artistId" element={<ArtistDetail />} />
             {/* Add more nested routes as needed */}
           </Route>
-          {/* Route adminPage here */}
-          {/* <Route path='/admin' element={<AdminScreen />} /> */}
+          <Route path='/admin' element={<HomeAdmin />}>
+            <Route index element={<TableAlbum />} />
+            <Route path="/admin/albums" element={<TableAlbum />} />
+            <Route path="/admin/songs" element={<TableSong />} />
+            <Route path="/admin/users" element={<TableUser />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>

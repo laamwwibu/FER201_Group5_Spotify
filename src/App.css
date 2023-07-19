@@ -17,7 +17,7 @@
 /* apply font and background color */
 .App {
     font-family: "Montserrat";
-    background-color: var(--pageBackground);
+    /* background-color: var(--pageBackground); */
     overflow-x: hidden;
 }
 
@@ -88,7 +88,8 @@
     font-size: 20px;
 }
 
-.header-nav-button,.header-user-button:hover {
+.header-nav-button,
+.header-user-button:hover {
     cursor: pointer;
 }
 

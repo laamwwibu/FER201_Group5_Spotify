@@ -15,7 +15,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import TableSong from '../Tables/TableSong';
 import TableAlbum from '../Tables/TableAlbum';
 import TableUser from '../Tables/TableUser';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Outlet } from 'react-router-dom';
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -77,24 +77,22 @@ export default function HomeAdmin() {
                         <hr style={{ color: '#425771' }} />
                         <Box class="app-menu">
                             <Button variant="contained" startIcon={<RecordVoiceOverIcon sx={{ fontSize: '25px' }} />}
-                                sx={buttonStyles}
+                                sx={buttonStyles} href='/admin/users'
                             >Quản lý Khách hàng</Button>
                             <Button variant="contained" startIcon={<AlbumIcon sx={{ fontSize: '25px' }} />}
-                                sx={buttonStyles}
+                                sx={buttonStyles} href="/admin/albums"
                             >Quản lý Album</Button>
                             <Button variant="contained" startIcon={<MusicNoteIcon sx={{ fontSize: '25px' }} />}
-                                sx={buttonStyles}
+                                sx={buttonStyles} href='/admin/songs'
                             >Quản lý bài hát</Button>
                         </Box>
                     </aside>
                 </Grid>
-                <Grid xs={6} md={2}>
+                <Grid xs={6} md={2} lg={2}>
                     <Item>xs=4</Item>
                 </Grid>
-                <Grid xs={6} md={10}>
-                    
-                    <TableUser />
-                    {/* <Item>xs=4</Item> */}
+                <Grid xs={6} md={10} lg={10}>
+                    <Outlet></Outlet>
                 </Grid>
 
             </Grid>
