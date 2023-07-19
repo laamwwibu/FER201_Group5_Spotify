@@ -79,6 +79,8 @@ export default function TableUser() {
       setRows(users);
       setStorgeData(users);
 
+      console.log(users)
+
     } catch (error) {
       console.log('Lỗi:', error);
     }
