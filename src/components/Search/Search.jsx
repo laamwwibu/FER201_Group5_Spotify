@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardBody, CardImg, CardTitle, CardText } from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faClock } from "@fortawesome/free-solid-svg-icons";
 
 const SearchFeature = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -14,7 +16,7 @@ const SearchFeature = () => {
             setIsLoading(true);
             delayTimer = setTimeout(() => {
                 fetchData();
-            }, 1000); // Delay of 1 second before making the search request
+            }, 1000); // Delay of 1 second (1000ms) before making the search request
         } else {
             setSearchResults({ artists: [], albums: [], songs: [] });
         }
@@ -47,7 +49,23 @@ const SearchFeature = () => {
                 song.name.toLowerCase().includes(searchTerm.toLowerCase().trim())
             );
 
-            setSearchResults({ artists: filteredArtists, albums: filteredAlbums, songs: filteredSongs });
+            // Get the artists for the filtered albums
+            const filteredAlbumArtists = filteredAlbums.map((album) =>
+                artists.find((artist) => artist.id === album.artistId)
+            );
+
+            // Get the albums for the filtered songs
+            const filteredSongAlbums = filteredSongs.map((song) =>
+                albums.find((album) => album.id === song.albumId)
+            );
+
+            setSearchResults({
+                artists: filteredArtists,
+                albums: filteredAlbums,
+                songs: filteredSongs,
+                albumArtists: filteredAlbumArtists,
+                songAlbums: filteredSongAlbums,
+            });
             setIsLoading(false); // Set isLoading to false once the API calls are complete
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -56,9 +74,19 @@ const SearchFeature = () => {
         }
     };
 
-    const getArtistName = (album) => {
-        const artist = searchResults.artists.find((artist) => artist.id === album.artistId);
-        return artist ? artist.name : 'Unknown Artist';
+    const getArtistNameForAlbum = (album) => {
+        const albumArtist = searchResults.albumArtists.find((artist) => artist.id === album.artistId);
+        return albumArtist ? albumArtist.name : 'Unknown Artist';
+    };
+
+    const getAlbumImageForSong = (song) => {
+        const album = searchResults.songAlbums.find((album) => album.id === song.albumId);
+        return album ? album.albumCover : 'https://via.placeholder.com/150'; // Replace with a default album cover URL
+    };
+
+    const getAlbumNameForSong = (song) => {
+        const album = searchResults.songAlbums.find((album) => album.id === song.albumId);
+        return album ? album.name : 'https://via.placeholder.com/150'; // Replace with a default album cover URL
     };
 
     const handleSearch = (event) => {
@@ -121,7 +149,7 @@ const SearchFeature = () => {
                                                         <Link
                                                             className='text-decoration-none'
                                                             to={`/artist/${album.artistId}`}
-                                                        >{getArtistName(album.artistId)}</Link>
+                                                        >{getArtistNameForAlbum(album)}</Link>
                                                     </CardText>
                                                 </CardBody>
                                             </Card>
@@ -133,14 +161,32 @@ const SearchFeature = () => {
                     )}
 
                     {searchResults.songs.length > 0 && (
-                        <div>
+                        <div className='text-white'>
                             <h2 className='text-white'>Songs:</h2>
-                            {searchResults.songs.map((song) => (
-                                <div key={song.id}>
-                                    <h3>{song.name}</h3>
-                                    {/* Display other song details here */}
-                                </div>
-                            ))}
+                            <div className='album-songs my-3'>
+                                <table className='table song-table'>
+                                    <thead>
+                                        <tr>
+                                            <th scope='col'>#</th>
+                                            <th scope='col'>Album Cover</th>
+                                            <th scope='col'>Title</th>
+                                            <th scope='col'>Album</th>
+                                            <th scope='col'><FontAwesomeIcon icon={faClock} /></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {searchResults.songs.map((song, index) => (
+                                            <tr key={song.id}>
+                                                <th scope='row'>{index + 1}</th>
+                                                <td><img src={getAlbumImageForSong(song)} style={{ width: '70px' }} alt="unknown" /></td>
+                                                <td>{song.name}</td>
+                                                <td>{getAlbumNameForSong(song)}</td>
+                                                <td>{song.duration}</td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     )}
                 </>
