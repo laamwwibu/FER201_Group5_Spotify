@@ -69,6 +69,7 @@ export default function TableAlbum() {
     const [search, setSearch] = useState('');
     const [show, setShow] = useState(false);
     const [show1, setShow1] = useState(false);
+    const [showCreate, setShowCreate] = useState(false);
     const [rows, setRows] = useState([]);
     const [artist, setArtist] = useState([])
     const [genres, setGenres] = useState([])
@@ -157,6 +158,27 @@ export default function TableAlbum() {
         }
     }
 
+    async function fetchCreateData(postData) {
+        try {
+            const responseSongs = await fetch(`http://localHost:9999/albums`, {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                credentials: "include",
+                body: JSON.stringify(postData),
+            });
+            const data = await responseSongs.json();
+            fetchData();
+            handleCancelShowCreate();
+            console.log(data)
+        } catch (error) {
+            console.log('Lỗi:', error);
+        }
+    }
+
+  
+
     async function fetchDeleteSong(albumId) {
         try {
           const response = await fetch(`http://localhost:9999/songs`, {
@@ -165,7 +187,7 @@ export default function TableAlbum() {
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({ id:11 }),
+            body: JSON.stringify({ albumId:albumId }),
           });
           const data = await response.json();
           fetchData();
@@ -206,6 +228,15 @@ export default function TableAlbum() {
         setRows(data1);
     }
 
+    const handleCancelShowCreate = () => {
+        setGenreName(0);
+        setArtisName(0);
+        setYear(0);
+        setAlbumName('');
+        setAlbumCover('');
+        setShowCreate(false);
+    }
+
     const filterByArtist = (e) => {
         const artistId = e.target.value;
         // console.log(albumId);
@@ -233,6 +264,8 @@ export default function TableAlbum() {
         setShow1(false);
     }
 
+ 
+
     const handleUpdate = () => {
         const postData = {
             id: parseInt(id),
@@ -246,6 +279,19 @@ export default function TableAlbum() {
         console.log(postData)
         fetchUpdateData(postData)
 
+    }
+
+    const handleCreate= () => {
+        const postData = {
+            genreId:genreName?parseInt(genreName):1,
+            artistId:artisName?parseInt(artisName):1,
+            name:albumName?albumName:"NaN",
+            year: year?year:"NaN",
+            albumCover:albumCover?albumCover:"NaN"
+        };
+
+        console.log(postData)
+        fetchCreateData(postData)
        
     }
 
@@ -256,8 +302,8 @@ export default function TableAlbum() {
 
     const handleOnDelete = (state) => {
         fetchDeleteSong(id)
-        // fetchDeleteAlbum(id);
-        // setShow(state);
+        fetchDeleteAlbum(id);
+        setShow(state);
     }
 
 
@@ -286,6 +332,7 @@ export default function TableAlbum() {
                                     backgroundColor: '#9DF99D',
                                 }
                             }}
+                            onClick={()=>setShowCreate(true)}
                         >Tạo mới Album</Button>
 
                         <Button variant="contained" startIcon={<DeleteIcon sx={{ fontSize: '25px !important' }} />}
@@ -402,6 +449,82 @@ export default function TableAlbum() {
                 <div style={{ marginTop: '10px' }}>
                     <Button variant="contained" sx={{ marginRight: '10px' }} onClick={handleCancelShow}>Hủy Bỏ</Button>
                     <Button variant="contained" onClick={handleUpdate}>Đồng Ý</Button>
+                </div>
+            </Box>}
+            {showCreate && <Box
+                sx={{
+                    position: "absolute",
+                    display: "flex",
+                    flexDirection: "column",
+                    top: "50%",
+                    left: "50%",
+                    position: "fixed",
+                    transform: "translate(-50%, -50%)",
+                    width: '20%',
+                    height: '50%',
+                    padding: "20px",
+                    backgroundColor: "#ffffff",
+                    borderRadius: "5px",
+                    boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
+                    zIndex: '4',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                }}
+            >
+
+                <Typography variant='h5' sx={{ fontWeight: 'bold', marginBottom: '10px' }} >
+                    Tạo album
+                </Typography>
+
+                <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+                    <div style={{ width: '45%' }}>
+                        <Typography variant='subtitle1' sx={{ fontWeight: 'bold', marginBottom: '10px' }} >
+                            GenreName:
+                        </Typography>
+                        <select className="form-control"
+                            onChange={(e) => setGenreName(e.target.value)}
+                            style={{ marginBottom: 27, marginTop: '5%' }}
+                        >
+                            <option key='0' value="0">-- Chọn Genre --</option>
+                            {genres.map((genres) => (
+                                <option key={genres.id} value={genres.id}>{genres.name}</option>
+                            ))}
+                        </select>
+                        <Typography variant='subtitle1' sx={{ fontWeight: 'bold', marginBottom: '10px' }} >
+                            Name:
+                        </Typography>
+                        <TextField label="Name" variant="outlined" value={albumName}
+                            onChange={(e) => setAlbumName(e.target.value)} />
+                    </div>
+                    <div style={{ width: '45%' }}>
+                        <Typography variant='subtitle1' sx={{ fontWeight: 'bold', marginBottom: '10px' }} >
+                            Year:
+                        </Typography>
+                        <TextField label="Year" variant="outlined" value={year} sx={{ marginBottom: '10px' }}
+                            onChange={(e) => setYear(e.target.value)}
+                        />
+                        <Typography variant='subtitle1' sx={{ fontWeight: 'bold', marginBottom: '10px' }} >
+                            ArtistName:
+                        </Typography>
+                        <select className="form-control"
+                            onChange={(e) => setArtisName(e.target.value)}
+                            style={{ marginBottom: 27, marginTop: '5%' }}
+                        >
+                            <option key='0' value="0">-- Chọn Artist --</option>
+                            {artist.map((artist) => (
+                                <option key={artist.id} value={artist.id}>{artist.name}</option>
+                            ))}
+                        </select>
+                        <Typography variant='subtitle1' sx={{ fontWeight: 'bold', marginBottom: '10px' }} >
+                            AlbumCover:
+                        </Typography>
+                        <TextField label="Name" variant="outlined" value={albumCover}
+                            onChange={(e) => setAlbumCover(e.target.value)} />
+                    </div>
+                </div>
+                <div style={{ marginTop: '10px' }}>
+                    <Button variant="contained" sx={{ marginRight: '10px' }} onClick={handleCancelShowCreate}>Hủy Bỏ</Button>
+                    <Button variant="contained" onClick={handleCreate}>Đồng Ý</Button>
                 </div>
             </Box>}
         </>

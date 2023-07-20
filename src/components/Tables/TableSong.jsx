@@ -55,6 +55,7 @@ export default function TableSong() {
   const [search, setSearch] = useState('');
   const [show, setShow] = useState(false);
   const [show1, setShow1] = useState(false);
+  const [showCreate, setShowCreate] = useState(false);
   const [rows, setRows] = useState([]);
   const [albums, setAlbums] = useState([])
   const [songs, setSongs] = useState([])
@@ -124,6 +125,25 @@ export default function TableSong() {
     }
   }
 
+  async function fetchCreateData(postData) {
+    try {
+      const responseSongs = await fetch(`http://localHost:9999/songs`, {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        credentials: "include",
+        body: JSON.stringify(postData),
+      });
+      const data = await responseSongs.json();
+      fetchData();
+      console.log(data);
+      handleCancelShowCreate();
+    } catch (error) {
+      console.log('Lỗi:', error);
+    }
+  }
+
   async function fetchDeleteSong(parameter) {
     try {
       const response = await fetch(`http://localHost:9999/songs/${parameter}`, {
@@ -178,6 +198,28 @@ export default function TableSong() {
     setShow1(false);
   }
 
+  const handleCancelShowCreate = () => {
+    setSongName('');
+    setAlbumName(0);
+    setDuation('');
+    setShowCreate(false);
+  }
+
+  const handleCreate = () => {
+    const postData = {
+      albumId:albumName?parseInt(albumName):1,
+      name: songName?songName:"NaN",
+      duration: duration?duration:"NaN",
+    };
+
+    console.log(postData)
+    fetchCreateData(postData)
+    
+    
+  }
+
+
+
   const handleUpdate = () => {
     const postData = {
       id: parseInt(id),
@@ -229,6 +271,7 @@ export default function TableSong() {
                   backgroundColor: '#9DF99D',
                 }
               }}
+              onClick={()=>setShowCreate(true)}
             >Tạo mới bài hát</Button>
 
             <Button variant="contained" startIcon={<DeleteIcon sx={{ fontSize: '25px !important' }} />}
@@ -326,6 +369,66 @@ export default function TableSong() {
         <div style={{ marginTop: '10px' }}>
           <Button variant="contained" sx={{ marginRight: '10px' }} onClick={handleCancelShow}>Hủy Bỏ</Button>
           <Button variant="contained" onClick={handleUpdate}>Đồng Ý</Button>
+        </div>
+      </Box>}
+      {showCreate && <Box
+        sx={{
+          position: "absolute",
+          display: "flex",
+          flexDirection: "column",
+          top: "50%",
+          left: "50%",
+          position: "fixed",
+          transform: "translate(-50%, -50%)",
+          width: '20%',
+          height: '40%',
+          padding: "20px",
+          backgroundColor: "#ffffff",
+          borderRadius: "5px",
+          boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
+          zIndex: '4',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+
+        <Typography variant='h5' sx={{ fontWeight: 'bold', marginBottom: '10px' }} >
+          Tạo bài hát
+        </Typography>
+
+        <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+          <div style={{ width: '45%' }}>
+            
+            <Typography variant='subtitle1' sx={{ fontWeight: 'bold', marginBottom: '10px' }} >
+              Name:
+            </Typography>
+            <TextField label="Name" variant="outlined" value={songName}
+              onChange={(e) => setSongName(e.target.value)} />
+          </div>
+          <div style={{ width: '45%' }}>
+            <Typography variant='subtitle1' sx={{ fontWeight: 'bold', marginBottom: '10px' }} >
+              AlbumName:
+            </Typography>
+            <select className="form-control"
+              onChange={(e) => setAlbumName(e.target.value)}
+              style={{ marginBottom: 27, marginTop: '5%' }}
+            >
+              <option key='0' value="0">-- Chọn album --</option>
+              {albums.map((album) => (
+                <option key={album.id} value={album.id}>{album.name}</option>
+              ))}
+            </select>
+            <Typography variant='subtitle1' sx={{ fontWeight: 'bold', marginBottom: '10px' }} >
+              Duration:
+            </Typography>
+            <TextField label="Duration" variant="outlined" value={duration}
+              onChange={(e) => setDuation(e.target.value)}
+            />
+          </div>
+        </div>
+        <div style={{ marginTop: '10px' }}>
+          <Button variant="contained" sx={{ marginRight: '10px' }} onClick={handleCancelShowCreate}>Hủy Bỏ</Button>
+          <Button variant="contained" onClick={handleCreate}>Đồng Ý</Button>
         </div>
       </Box>}
     </>
